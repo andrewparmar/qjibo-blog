@@ -19,4 +19,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blogengine/', include('blogengine.urls')),
+    # url(r'^$', include('blogengine.urls')),
+    # url(r'^/', include('blogengine.urls')),
 ]
+

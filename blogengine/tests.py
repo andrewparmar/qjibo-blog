@@ -1,4 +1,6 @@
-from django.test import TestCase
+from django.contrib.auth.models import User
+from django.contrib.auth import login
+from django.test import TestCase, LiveServerTestCase, Client
 from django.utils import timezone
 from blogengine.models import Post
 
@@ -32,5 +34,42 @@ class PostTest(TestCase):
 		self.assertEquals(only_post.pub_date.hour, post.pub_date.hour)
 		self.assertEquals(only_post.pub_date.minute, post.pub_date.minute)
 		self.assertEquals(only_post.pub_date.second, post.pub_date.second)
+
+class AdminTest(LiveServerTestCase):
+    def setUp(self):
+	    self.user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
+	    # user.save()s
+
+
+    def test_login(self):
+        # Create client
+        c = Client()
+
+        # Get login page
+        response = c.get('/admin/', follow=True)
+
+        # Check response code
+        self.assertEquals(response.status_code, 200)
+
+        # print(response)	
+
+        # Check 'Log in' in response
+        self.assertTrue(b'Log in' in response.content)
+
+        # Log the user in
+        Check = c.login(username='john', password="johnpassword")
+        print(Check)
+        self.assertTrue(Check)	
+        c.force_login(self.user)
+
+        # Check response code
+        response = c.get('/admin/', follow=True)
+        self.assertEquals(response.status_code, 200)
+
+        print(response.content)
+
+        # Check 'Log out' in response
+        self.assertTrue(b'Log out' in response.content)
+
 
 		

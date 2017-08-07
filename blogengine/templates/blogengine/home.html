@@ -11,46 +11,53 @@
 					  <li class="active">Data</li>
 					</ol> -->
 
-			        <h1>Latest Posts</h1>
-			        <article>
-					    <h2><a href="posts_page.html">All knowing, all powerful, timeless - Books</a></h2>
-					 
-					    <div class="row">
-					        <!-- Post tags -->
-					        <div class="group1 col-sm-6 col-md-6">
-					            <span class="glyphicon glyphicon-folder-open"> </span>  <a href="#">   Signs</a>
-					                     <span class="glyphicon glyphicon-tag"></span> <a href="#">Aries</a>,
-					                <a href="#">Fire</a>, <a href="#">Mars</a>
-					        </div>
-					        <!-- Post date and time -->
-					        <div class="col-sm-6 col-md-6">
-					                <!-- <span class="glyphicon glyphicon-pencil"></span> <a href="singlepost.html#comments">20 Comments</a>
-					                  
-					                <span class="glyphicon glyphicon-time"></span> August 24, 2013 9:00 PM -->
-					                <span class="pull-right">
-					                	<span class="glyphicon glyphicon-time"></span> August 24, 2013 9:00 PM
-					                </span>
-					        </div>
-					    </div>
-					 
-					    <hr>
-					 
-					    <img src="https://rqwoodward.files.wordpress.com/2016/12/5399905776_18e063742d_b.jpg?w=900&h=300&crop=1" class="img-responsive">
-					 
-					    <br />
-					 
-					    <p class="lead">If there is anything better than books in this world, I haven't yet found it. Amazing aren't they. To read books is to live many lifetimes in the span of a hours. This is my journey to live as many lives as possible, and I hope you can join me.</p>
-					 
-					    <p>Lots more to come here...</p>
-					 
-					    <p class="text-right">
-					        <a href="singlepost.html" class="text-right">
-					            continue reading...
-					        </a>
-					    </p>
-					 
-					    <hr>
-					</article>
+			        <!-- <h1>Latest Posts</h1> -->
+			        <h1>All Posts</h1>
+
+			        {% for post in object_list %}
+
+			        	<article>
+						    <h2><a href="posts_page.html">{{ post.title }}</a></h2>
+						 
+						    <div class="row">
+						        <!-- Post tags -->
+						        <div class="group1 col-sm-6 col-md-6">
+						            <span class="glyphicon glyphicon-folder-open"> </span>  <a href="#">   Signs</a>
+						                     <span class="glyphicon glyphicon-tag"></span> <a href="#">Aries</a>,
+						                <a href="#">Fire</a>, <a href="#">Mars</a>
+						        </div>
+						        <!-- Post date and time -->
+						        <div class="col-sm-6 col-md-6">
+						                <!-- <span class="glyphicon glyphicon-pencil"></span> <a href="singlepost.html#comments">20 Comments</a>
+						                  
+						                <span class="glyphicon glyphicon-time"></span> August 24, 2013 9:00 PM -->
+						                <span class="pull-right">
+					                	<span class="glyphicon glyphicon-time"></span>{{ post.pub_date }}
+						                </span>
+						        </div>
+						    </div>
+						 
+						    <hr>
+						 
+						    <img src="https://rqwoodward.files.wordpress.com/2016/12/5399905776_18e063742d_b.jpg?w=900&h=300&crop=1" class="img-responsive">
+						 
+						    <br />
+						 
+						    <p class="lead">{{ post.text }}</p>
+						 
+						    <p>Lots more to come here...</p>
+						 
+						    <p class="text-right">
+						        <a href="singlepost.html" class="text-right">
+						            continue reading...
+						        </a>
+						    </p>
+						 
+						    <hr>
+						</article>
+
+			        {% endfor %}
+			        
 
 					<!-- pager -->
 		            <ul class="pager">

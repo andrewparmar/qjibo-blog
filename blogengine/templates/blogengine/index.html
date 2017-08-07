@@ -1,6 +1,11 @@
 <html>
     <head>
         <title>My Django Blog</title>
+
+        <!-- Bootstrap CSS file -->
+	    {% load staticfiles %}
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	    <link rel="stylesheet" href="{% static 'blogengine/style.css' %}" />
     </head>
     <body>
         {% for post in object_list %}
@@ -9,4 +14,4 @@
         <!-- {{ post.text }} -->
         {% endfor %}
     </body>
-</html>
+</html>	

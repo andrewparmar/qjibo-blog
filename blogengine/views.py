@@ -9,8 +9,9 @@ from .models import Post
 
 
 class IndexView(generic.ListView):
-	template_name = 'blogengine/index.html'
+	# template_name = 'blogengine/index.html'
 	# template_name = 'blogengine/base.html'
+	template_name = 'blogengine/home.html'
 
 	def get_queryset(self):
 		return Post.objects.all()

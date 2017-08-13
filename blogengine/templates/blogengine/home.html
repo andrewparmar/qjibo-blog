@@ -4,7 +4,7 @@
 
 	    <div id="body" class="container">
 	    	<div class="row">
-			    <div class="col-md-8">
+			    <div class="col-md-10 col-md-offset-1">
 			        <!-- <ol class="breadcrumb">
 					  <li><a href="#">Home</a></li>
 					  <li><a href="#">Library</a></li>
@@ -12,26 +12,27 @@
 					</ol> -->
 
 			        <!-- <h1>Latest Posts</h1> -->
-			        <h1>All Posts</h1>
+			        <h1 class="text-center" >All Posts</h1>
 
 			        {% for post in object_list %}
 
 			        	<article>
-						    <h2><a href="posts_page.html">{{ post.title }}</a></h2>
+						    <h2><a href="{% url 'blogengine:post_detail' post.id %}">{{ post.title }}</a></h2>
+
 						 
 						    <div class="row">
 						        <!-- Post tags -->
-						        <div class="group1 col-sm-6 col-md-6">
+						        <!-- <div class="group1 col-sm-6 col-md-6">
 						            <span class="glyphicon glyphicon-folder-open"> </span>  <a href="#">   Signs</a>
 						                     <span class="glyphicon glyphicon-tag"></span> <a href="#">Aries</a>,
 						                <a href="#">Fire</a>, <a href="#">Mars</a>
-						        </div>
+						        </div> -->
 						        <!-- Post date and time -->
 						        <div class="col-sm-6 col-md-6">
 						                <!-- <span class="glyphicon glyphicon-pencil"></span> <a href="singlepost.html#comments">20 Comments</a>
 						                  
 						                <span class="glyphicon glyphicon-time"></span> August 24, 2013 9:00 PM -->
-						                <span class="pull-right">
+						                <span class="pull-left">
 					                	<span class="glyphicon glyphicon-time"></span>{{ post.pub_date }}
 						                </span>
 						        </div>
@@ -39,37 +40,37 @@
 						 
 						    <hr>
 						 
-						    <img src="https://rqwoodward.files.wordpress.com/2016/12/5399905776_18e063742d_b.jpg?w=900&h=300&crop=1" class="img-responsive">
+						    <!-- s -->
 						 
-						    <br />
+						    <br>
 						 
-						    <p class="lead">{{ post.text }}</p>
+						    <p class="lead text">{{ post.text }}</p>
 						 
 						    <p>Lots more to come here...</p>
 						 
 						    <p class="text-right">
-						        <a href="singlepost.html" class="text-right">
+						        <a href="/post/{{post.id}}" class="text-right">
 						            continue reading...
 						        </a>
 						    </p>
 						 
-						    <hr>
+						    <!-- <hr> -->
 						</article>
 
 			        {% endfor %}
 			        
 
 					<!-- pager -->
-		            <ul class="pager">
+		           <!--  <ul class="pager">
 		                <li class="previous">
 		                    <a href="#">← Older</a>
 		                </li>
 		                <li class="next">
 		                    <a href="#">Newer →</a>
 		                </li>
-		            </ul>
+		            </ul> -->
 
-					<div class="well">
+					<!-- <div class="well">
 	 
 					    <h4>Leave a comment</h4>
 					 
@@ -95,80 +96,11 @@
 					        </div>
 					 
 					    </form>
-					</div>
+					</div> -->
 
 			    </div>
 			    
-			    <!-- Widget Area -->
-			    <div class="col-md-4">
-			        <!-- Subscribe to my feed widget -->
-				    <div class="well text-center">
-				        <p class="lead">
-				            Don't want to miss updates? Please click the below button!
-				        </p>
-				        <button class="btn btn-primary btn-lg">Subscribe to my feed</button>
-				    </div>
-				 
-				    <!-- Other widgets -->
-	<!-- 			    <div class="panel panel-default">
-					    <div class="panel-heading">
-					        <h4>Latest Posts</h4>
-					    </div>
-					    <ul class="list-group">
-					        <li class="list-group-item"><a href="singlepost.html">1. Aries Sun Sign March 21 - April 19</a></li>
-					        <li class="list-group-item"><a href="singlepost.html">2. Taurus Sun Sign April 20 - May 20</a></li>
-					        <li class="list-group-item"><a href="singlepost.html">3. Gemini Sun Sign May 21 - June 21</a></li>
-					        <li class="list-group-item"><a href="singlepost.html">4. Cancer Sun Sign June 22 - July 22</a></li>
-					        <li class="list-group-item"><a href="singlepost.html">5. Leo Sun Sign July 23 - August 22 </a></li>
-					    </ul>
-					</div> -->
-					
-					<div class="panel panel-default">
-					    <div class="panel-heading">
-					        <h4>Categories</h4>
-					    </div>
-					    <ul class="list-group">
-					        <li class="list-group-item"><a href="#">Signs</a></li>
-					        <li class="list-group-item"><a href="#">Elements</a></li>
-					        <li class="list-group-item"><a href="#">Planets</a></li>
-					        <li class="list-group-item"><a href="#">Cusps</a></li>
-					        <li class="list-group-item"><a href="#">Compatibility</a></li>
-					    </ul>
-					</div>
-					 
-					 
-					<!-- <div class="panel panel-default">
-					    <div class="panel-heading">
-					        <h4>Recent Comments</h4>
-					    </div>
-					    <ul class="list-group">
-					        <li class="list-group-item"><a href="#">I don't believe in astrology but still your writing style is really great! - <em>john</em></a></li>
-					        <li class="list-group-item"><a href="#">Wow.. what you said is really true! I'm an aries though - <em>Anto</em></a></li>
-					        <li class="list-group-item"><a href="#">Does capricorn and aries is compatibile? - <em>Sarah</em></a></li>
-					        <li class="list-group-item"><a href="#">I'm a cancer woman been in love with Leo. Will this work? - <em>Mary</em></a></li>
-					    </ul>
-					</div> -->
 
-					<div class="panel panel-default">
-					    <div class="panel-heading">
-					        <h4>Tags</h4>
-					    </div>
-					    <div class="panel-body">
-					        <ul class="list-inline">
-					            <li><a href="#">Aries</a></li>
-					            <li><a href="#">Fire</a></li>
-					            <li><a href="#">Mars</a></li>
-					            <li><a href="#">Taurus</a></li>
-					            <li><a href="#">Earth</a></li>
-					            <li><a href="#">Moon</a></li>
-					            <li><a href="#">Gemini</a></li>
-					            <li><a href="#">Air</a></li>
-					            <li><a href="#">Mercury</a></li>
-					            <li><a href="#">Cancer</a></li>
-					        </ul>
-					    </div>
-					</div>
-			    </div>	
 			</div>
 	    </div>
 

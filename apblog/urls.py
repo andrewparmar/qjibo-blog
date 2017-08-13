@@ -17,9 +17,12 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
+    
     url(r'^admin/', admin.site.urls),
-    url(r'^blogengine/', include('blogengine.urls')),
+    url(r'^', include('blogengine.urls')),
+    # url(r'^blogengine/', include('blogengine.urls')),
     # url(r'^$', include('blogengine.urls')),
-    # url(r'^/', include('blogengine.urls')),
+    # url(r'^blogengine/', include('blogengine.urls')),
+    # url(r'^(?P<question_id>[0-9]+)/$', views.detail, name='detail'),
 ]
 

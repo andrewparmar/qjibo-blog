@@ -1,0 +1,34 @@
+.banner {	
+	/*color: #fae596;*/
+    color: #303030;
+	font-family: 'Droid Serif', serif;
+    text-align: center;
+    /*border-bottom: 45px solid #dddfd4;*/
+    padding-bottom: 50px;
+    padding-top: 50px;
+    font-size: 90px;
+    background-color: #FFCC66;
+    /*background: linear-gradient(#FCBF64, #D84478, #5A5CC9);*/
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+.navbarAP {
+	border-radius: 0px
+}
+
+.text {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 32px;      /* fallback */
+   -webkit-line-clamp: 3; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+
+body{
+    /*background-image: 'https://image.freepik.com/free-vector/purple-gradient-background-design_1164-863.jpg';*/
+    /*background-image: url('https://image.freepik.com/free-vector/purple-gradient-background-design_1164-863.jpg');*/
+}

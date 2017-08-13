@@ -1,0 +1,26 @@
+Created django project
+
+Created first app
+
+Add app to settings file
+
+perform migration
+
+Write test case for Post
+
+created model for Post
+
+perform migration
+
+Write test case for LiveServer
+	-Login & Logout
+	-Login and post
+	-Index route
+
+Implement index route
+	- create route pattern in project urls.py
+	- create route pattern in app urls.py\
+
+
+Add temlpate dir to settings file
+

@@ -1,9 +1,13 @@
 dj-database-url==0.4.2
 dj-static==0.0.6
 Django==1.11.4
+django-markdownx==2.0.21
 django-toolbelt==0.0.1
 gunicorn==19.7.1
+Markdown==2.6.8
+olefile==0.44
+Pillow==4.2.1
+pipdeptree==0.10.1
 psycopg2==2.7.3
 pytz==2017.2
-South==1.0.2
 static3==0.7.0

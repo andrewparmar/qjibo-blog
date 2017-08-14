@@ -10,6 +10,11 @@ class Post(models.Model):
 	# def get_absolute_url(self):
  #        return "/%s/%s/%s/" % (self.pub_date.year, self.pub_date.month, self.slug)
 
+class Comment(models.Model):
+	post = models.ForeignKey(Post, on_delete=models.CASCADE)
+	name = models.CharField(max_length=50)
+	email = models.CharField(max_length=50)
+	comment_text = models.TextField()
 
 	def __str__(self):
 		return self.title

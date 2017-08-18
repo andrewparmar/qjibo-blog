@@ -1,1 +1,1 @@
-# Blog built on Django frame work.
+# Blog built on the Python Django framework.
